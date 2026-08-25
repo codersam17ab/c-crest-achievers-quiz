@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  background: #050814;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+.wrap {
+  max-width: 1050px;
+  margin: auto;
+  padding: 25px;
+}
+.hero {
+  text-align: center;
+}
+.tag {
+  color: #22d3ee;
+  letter-spacing: 2px;
+}
+.hero h1 {
+  font-size: 52px;
+  margin: 12px;
+  background: linear-gradient(90deg, #22d3ee, #fff, #a78bfa);
+  color: transparent;
+  background-clip: text;
+}
+.sub {
+  letter-spacing: 2px;
+  color: #cbd5e1;
+}
+.teams {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.team {
+  padding: 18px;
+  text-align: center;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 18px;
+}
+.team.active {
+  border-color: #22d3ee;
+  box-shadow: 0 0 25px #22d3ee44;
+}
+.name {
+  font-weight: bold;
+}
+.score {
+  font-size: 40px;
+  font-weight: bold;
+}
+.panel {
+  background: #0d1422;
+  border: 1px solid #334155;
+  border-radius: 22px;
+  overflow: hidden;
+}
+.top {
+  padding: 18px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.progress {
+  flex: 1;
+}
+.bar {
+  height: 8px;
+  background: #1e293b;
+  border-radius: 9px;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  width: 7%;
+  background: linear-gradient(90deg, #22d3ee, #a78bfa);
+  transition: .3s;
+}
+.timer {
+  width: 65px;
+  height: 65px;
+  border: 5px solid #22d3ee;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+.danger {
+  border-color: #ef4444 !important;
+  color: #ef4444;
+}
+.content {
+  padding: 28px;
+}
+.turn {
+  text-align: center;
+  color: #22d3ee;
+  font-weight: bold;
+}
+.q {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 15px 0 25px;
+}
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+.opt {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #334155;
+  background: #162033;
+  color: #fff;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+.opt:hover {
+  border-color: #22d3ee;
+}
+.opt.correct {
+  border-color: #22c55e;
+  background: #14532d;
+}
+.opt.wrong {
+  border-color: #ef4444;
+  background: #450a0a;
+}
+.opt span {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  background: #263449;
+  border-radius: 8px;
+  color: #22d3ee;
+  font-weight: bold;
+  margin-right: 8px;
+}
+.notice {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #111c2e;
+  text-align: center;
+}
+.right {
+  color: #86efac;
+  border: 1px solid #22c55e;
+}
+.wrongN {
+  color: #fca5a5;
+  border: 1px solid #ef4444;
+}
+.why {
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  font-weight: normal;
+  color: #e0e7ff;
+  font-size: 14px;
+}
+.btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #22d3ee, #a78bfa);
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: .4;
+}
+.creator {
+  font-family: monospace;
+  text-align: center;
+  margin-top: 22px;
+  color: #94a3b8;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+.qstart {
+  text-align: center;
+  padding: 30px 10px;
+}
+.qstart h3 {
+  margin: 0 0 8px;
+  color: #22d3ee;
+}
+.qstart p {
+  color: #cbd5e1;
+  margin: 6px 0 16px;
+}
+.rules {
+  margin-top: 18px;
+  padding: 18px;
+  background: #0d1422;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+.result {
+  display: none;
+  text-align: center;
+  padding: 40px;
+}
+.final {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.final div {
+  background: #111827;
+  padding: 20px;
+  border-radius: 15px;
+}
+.final strong {
+  display: block;
+  font-size: 42px;
+}
+@media(max-width:650px) {
+  .options, .teams, .final {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+  .content {
+    padding: 20px;
+  }
+  .top {
+    flex-direction: column;
+  }
+  .progress {
+    width: 100%;
+  }
+}
