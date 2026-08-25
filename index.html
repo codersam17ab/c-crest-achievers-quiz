@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C-CREST ACHIEVERS</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="tag">LITERATURE × TECHNOLOGY</div>
+      <h1>Club Activity</h1>
+      <div class="sub">TEAM C-CREST ACHIEVERS</div>
+      <p>Question-Ans Game • Two-Team Challenge</p>
+      <div class="creator">By Trivedi Rudraksh-TY</div>
+    </header>
+
+    <div class="teams">
+      <div id="ta" class="team active">
+        <div>TEAM A</div>
+        <div class="name">NEXUS</div>
+        <div id="sa" class="score">0</div>
+      </div>
+      <div id="tb" class="team">
+        <div>TEAM B</div>
+        <div class="name">ELITE ODYSSEY</div>
+        <div id="sb" class="score">0</div>
+      </div>
+    </div>
+
+    <section id="startScreen" class="panel" style="text-align:center;padding:40px">
+      <h2>Ready to Start?</h2>
+      <p>Press Start to begin the 20-second timed quiz with 50 questions.</p>
+      <button id="startBtn" class="btn" onclick="startGame()">▶ Start Quiz</button>
+    </section>
+
+    <section id="game" class="panel" style="display:none">
+      <div class="top">
+        <div class="progress">
+          <div id="pt">Question 1 of 50</div>
+          <div class="bar"><i id="pb"></i></div>
+        </div>
+        <div id="timer" class="timer">20</div>
+      </div>
+      <div class="content">
+        <div id="turn" class="turn"></div>
+        <div id="qstart" class="qstart">
+          <h3 id="qstartTitle">Ready for Question 1?</h3>
+          <p>Read the question first. Click the button below to start the 20-second timer.</p>
+          <button id="questionStartBtn" class="btn" onclick="startQuestion()">▶ Start Timer</button>
+        </div>
+        <div id="q" class="q" style="display:none"></div>
+        <div id="opts" class="options"></div>
+        <div id="notice" class="notice">Press Start Question to begin.</div>
+        <button id="next" class="btn" disabled>Next Question →</button>
+      </div>
+    </section>
+
+    <div class="rules">
+      <b>⚙️ Terms & Conditions</b>
+      <ul>
+        <li><b>Time Limited:</b> 20 seconds. Time-out automatically passes the question to the other team.</li>
+        <li><b>Wrong Answer:</b> Question passes to the next team. A correct answer does not shift the turn immediately.</li>
+        <li><b>Right Answer:</b> Correct option becomes green and the active team gets <b>+1</b>.</li>
+        <li><b>Score System:</b> +1 for each correct answer; no point for wrong/timeout.</li>
+        <li><b>Performance Levels:</b> 20 points = Smart Performer • 30 points = Quiz Master • 50 points = Ultimate Legend.</li>
+        <li><b>Passing System:</b> The second team gets one chance on a passed question. After that, the next question begins.</li>
+        <li><b>Turn System:</b> A team that answers correctly keeps control for the next question. The turn switches only when the current team answers incorrectly or fails/time-outs.</li>
+        <li><b>Answer Reveal:</b> The correct answer stays hidden while a question is passed — it's shown only once it's answered correctly, or once both teams have had their attempt.</li>
+      </ul>
+    </div>
+
+    <section id="result" class="panel result">
+      <h2>🏆 Quiz Completed!</h2>
+      <h3 id="winner"></h3>
+      <h2 id="rankTitle"></h2>
+      <p id="rankMessage"></p>
+      <div class="final">
+        <div>TEAM A — NEXUS<strong id="fa">0</strong></div>
+        <div>TEAM B — ELITE ODYSSEY<strong id="fb">0</strong></div>
+      </div>
+      <button class="btn" onclick="restart()">↻ Play Again</button>
+    </section>
+  </div>
+
+  <script src="assets/js/questions.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
